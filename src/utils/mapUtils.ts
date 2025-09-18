@@ -25,4 +25,4 @@ const findUniqueSymbol = (map: MapGrid, symbol: string): Position => {
   return positions[0];
 };
 
-export { isInsideMap, findUniqueSymbol };
+export { isInsideMap, findUniqueSymbol, getSymbolPositions };
