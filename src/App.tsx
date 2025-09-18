@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import { map2 } from "./consts/maps";
+import { findPath } from "./core/pathfinder";
 
 const App = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
@@ -6,6 +8,9 @@ const App = () => {
   const handleClick = () => {
     console.log(ref.current?.value);
   };
+
+  const result = findPath(map2);
+  console.log(result);
 
   return (
     <main className="flex flex-col justify-center items-center bg-gray-200 h-screen">
@@ -17,6 +22,14 @@ const App = () => {
       >
         Start
       </button>
+      <div>
+        <h2>Result</h2>
+        <p>{result.letters}</p>
+      </div>
+      <div>
+        <h2>Path</h2>
+        <p>{result.path}</p>
+      </div>
     </main>
   );
 };
